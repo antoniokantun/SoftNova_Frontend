@@ -1,35 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+// import { useScroll, useTransform } from 'framer-motion';
 
-function App() {
-  const [count, setCount] = useState(0)
+// Layout Components
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
 
+// Section Components
+import HeroSection from './components/sections/HeroSection';
+import StatsSection from './components/sections/StatsSection';
+import ServicesSection from './components/sections/ServicesSection';
+import TechnologiesSection from './components/sections/TechnologiesSection';
+import ProcessSection from './components/sections/ProcessSection';
+import TestimonialsSection from './components/sections/TestimonialsSection';
+import BlogSection from './components/sections/BlogSection';
+import ContactSection from './components/sections/ContactSection';
+
+
+
+// Constants
+import { colors } from './constants/colors';
+
+
+const App: React.FC = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-amber-50" style={{ 
+      background: `linear-gradient(135deg, ${colors.mint} 0%, ${colors.lightGreen} 100%)` 
+    }}>
+      <Navbar />
+      
+      
+      <main>
+        <HeroSection />
+        <StatsSection />
+        <ServicesSection />
+        <TechnologiesSection />
+        <ProcessSection />
+        <TestimonialsSection />
+        <BlogSection />
+        <ContactSection />
+      </main>
+      
+      <Footer />
+    </div>
+  );
+};
 
-export default App
+export default App;
