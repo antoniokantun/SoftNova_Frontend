@@ -7,6 +7,8 @@ export interface FormData {
   telefono: string;
   mensaje: string;
   servicio: string;
+  aceptaPrivacidad: boolean;
+  recaptchaToken: string;
 }
 
 export interface FormErrors {
@@ -99,3 +101,34 @@ export interface AnimatedBackgroundProps {
   y1: unknown; // MotionValue from framer-motion
   y2: unknown; // MotionValue from framer-motion
 }
+
+// Nuevas interfaces para el backend
+export interface ApiFormData {
+  nombre_completo: string;
+  correo: string;
+  telefono: string;
+  servicio_id: number;
+  mensaje: string;
+  recaptchaToken: string;
+}
+
+export interface ApiResponse {
+  mensaje: string;
+  id?: number;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  detalles?: any;
+}
+
+// Mapeo de servicios para el backend
+export const SERVICIOS_MAP: { [key: string]: number } = {
+  'desarrollo-web': 1,
+  'desarrollo-mobile': 2,
+  'cloud-computing': 3,
+  'consultoria': 4,
+  'devops': 5,
+  'base-datos': 6,
+  'ui-ux': 7,
+  'seo': 8,
+  'soporte': 9,
+  'otro': 10
+};
