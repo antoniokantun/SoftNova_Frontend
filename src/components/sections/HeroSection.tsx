@@ -58,7 +58,8 @@ const HeroSection: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
-            <motion.button
+            <motion.a
+              href="#contacto"
               whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 rounded-full text-white font-bold text-lg transition-all shadow-lg hover:shadow-2xl flex items-center gap-2"
@@ -66,7 +67,7 @@ const HeroSection: React.FC = () => {
             >
               Comenzar Proyecto
               <ArrowRight className="w-5 h-5" />
-            </motion.button>
+            </motion.a>
             
             <motion.button
               whileHover={{ scale: 1.05 }}
